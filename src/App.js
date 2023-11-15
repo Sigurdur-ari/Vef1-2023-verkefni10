@@ -14,22 +14,19 @@ function App() {
       const response = await fetch('https://apis.is/petrol');
       const data = await response.json();
       const dataArray = Array.isArray(data) ? data : [data];
-      await setGasStations(dataArray);
+      setGasStations(dataArray);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
-  fetchData();
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log('Gas Stations State:', gasStations);
-
   const results = gasStations[0];
   return (
-    <div>
+    <div className='grid'>
       {results &&
         results.results.map((station, index) => (
           <GetStation key={index} station={station} />

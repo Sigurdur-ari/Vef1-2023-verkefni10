@@ -4,9 +4,27 @@ body {
   background-color: beige;
 }
 
-#root{
+.grid{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   gap: 1rem;
+}
+
+.station{
+  grid-column: span 3;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  text-align: center;
+
+  padding: 1rem;
+  border: 6px solid black;
+  border-radius: 10px;
+}
+
+.station .title{
+  border-bottom: 2px solid black;
 }
